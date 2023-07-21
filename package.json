@@ -1,0 +1,57 @@
+{
+  "name": "stock_counter",
+  "version": "1.0.0",
+  "description": "Project, Portfolio",
+  "main": "main.js",
+  "build": {
+    "appId": "com.electron.stock_counter",
+    "directories": {
+      "output": "dist"
+    },
+    "files": [
+      "assets",
+      "src",
+      "package.json",
+      "package-lock.json",
+      "main.js",
+      "preload.js"
+    ],
+    "mac": {
+      "icon": "assets/mac/STOCK_COUNTER_ICON.icns",
+      "target": [
+        "dmg"
+      ]
+    },
+    "win": {
+      "icon": "assets/win/STOCK_COUNTER_ICON.ico",
+      "target": "nsis"
+    },
+    "nsis": {
+      "oneClick": false,
+      "allowToChangeInstallationDirectory": true
+    },
+    "extraResources": [
+      "stock.sqlite"
+    ]
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "electron .",
+    "tailbuild": "npx tailwindcss -i ./src/css/input.css -o ./src/css/dist/output.css --watch",
+    "postinstall": "install-app-deps"
+  },
+  "author": "Gabriel Nakamura",
+  "license": "ISC",
+  "devDependencies": {
+    "electron": "^14.2.9",
+    "electron-builder": "^23.4.0",
+    "electron-rebuild": "^3.2.9",
+    "tailwindcss": "^3.3.2"
+  },
+  "dependencies": {
+    "@electron/asar": "^3.2.4",
+    "electron-reload": "^2.0.0-alpha.1",
+    "sqlite3": "^5.1.6",
+    "tw-elements": "^1.0.0-beta2"
+  }
+}
