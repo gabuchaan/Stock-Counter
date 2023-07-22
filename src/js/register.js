@@ -24,9 +24,9 @@ registerBtn.addEventListener('click', async () => {
     }
 
     //--------- Reset Message -----------
-    userNameHelp.innerText = 'The user name is not valid';
-    passwordHelp.innerText = 'The password is not valid. Minimum 8 caracter';
-    confirmPasswordHelp.innerText = 'The password is not match';
+    userNameHelp.innerText = 'The username is not valid';
+    passwordHelp.innerText = 'The password is not valid. Minimum 8 caracters';
+    confirmPasswordHelp.innerText = 'The password doesn\'t match';
 
     //--------- Validate inputData -----------
 
@@ -38,7 +38,7 @@ registerBtn.addEventListener('click', async () => {
         // Check if the userName is already exist
         let result = await window.auth.registerCheck(registerData);
         if (!result.registerCheck) {
-            userNameHelp.innerText = 'The user name is already exists';
+            userNameHelp.innerText = 'The username already exists';
             userNameHelp.classList.remove('hidden');
             registerFlag = false;
         } else {

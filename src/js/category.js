@@ -140,7 +140,7 @@ addCategoryBtn.addEventListener('click', async () => {
     // Validate if the CategoryName is already exists
     let result = await window.category.categoryCheck(addCategoryData);
     if (!result.categoryCheck) {
-        categoryHelp.innerText = 'Category name is already exists';
+        categoryHelp.innerText = 'Category name already exists';
         categoryHelp.classList.remove('hidden');
         return
     } else {
@@ -175,7 +175,7 @@ addProductBtn.addEventListener('click', async () => {
     // Validate if the productName is already exists
     let validateResult = await window.product.productCheck(addProductData);
     if (!validateResult.productCheck) {
-        productNameHelp.innerText = 'Product name is already exists';
+        productNameHelp.innerText = 'Product name already exists';
         productNameHelp.classList.remove('hidden');
         return;
     } else {
@@ -184,7 +184,7 @@ addProductBtn.addEventListener('click', async () => {
 
     // Validate minStock & stock
     if (!checkNum(addProductData.minStock) || !checkIfNotEmpty(addProductData.minStock)) {
-        minsStockHelp.innerText = 'The value should be number.';
+        minsStockHelp.innerText = 'The value should be a number.';
         minsStockHelp.classList.remove('hidden');
         return;
     } else {
@@ -192,7 +192,7 @@ addProductBtn.addEventListener('click', async () => {
     }
 
     if (!checkNum(addProductData.stock) || !checkIfNotEmpty(addProductData.stock)) {
-        stockHelp.innerText = 'The value should be number.';
+        stockHelp.innerText = 'The value should be a number.';
         stockHelp.classList.remove('hidden');
         return;
     } else {
@@ -238,10 +238,10 @@ function setProducts(products) {
     if (products.getAllProducts.length == 0) {
         if (categoryId == 99999) {
             showDeleteCategoryBtn.classList.add('hidden');
-            noItemMessage.innerText = 'There is no products. Create category from sidebar and add product.'
+            noItemMessage.innerText = 'There are no products. Create a category from the sidebar and add a product.'
             noItemMessage.classList.remove('hidden')
         } else {
-            noItemMessage.innerText = 'There is no products. Add products from plus button.'
+            noItemMessage.innerText = 'There are no products. Add products from plus button.'
             noItemMessage.classList.remove('hidden');
         }
     }
