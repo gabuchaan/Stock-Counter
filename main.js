@@ -13,7 +13,7 @@ const sqlite3 = require('sqlite3').verbose();
 
 // ------------ For dev ------------------
 // Change manualy if it is dev or not
-const isDev = true;
+const isDev = false;
 
 // ------------ Start App ----------------
 const createWindow = () => {
