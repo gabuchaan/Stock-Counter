@@ -16,9 +16,25 @@ Stock Counterは、WindowsとMac用のシンプルな在庫管理用デスクト
 ## インストール方法
 * ### Windows
      こちらのリンクからインストーラーをダウンロードできます。Microsoft Defender SmartScreenが警告を表示する場合があります。
-     <http://example.com>
+     [Stock Counter for windows](https://github.com/gabuchaan/Stock-Counter/releases/tag/v1.0.0)
 * ### Mac
-  
+　　__Macの場合はNode.jsがインストールされている必要があります。__
+   
+1. このリポジトリをクローンします。
+   ```
+   git clone https://github.com/gabuchaan/Stock-Counter.git
+   ```
+3. npmをインストールします。
+   ```
+   npm install
+   ```
+5. アプリをビルドします。
+   ```
+   node_modules/.bin/electron-builder --mac --x64
+   ```
+7. プロジェクト内のdistフォルダ内に __Stock_counter-1.0.0.dmg__ (インストーラー)が作成されます。
+   
+
 ## 使用方法
 
 * ### カテゴリー作成
